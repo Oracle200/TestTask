@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Оценки</title>
+<title>Информация</title>
 <meta charset="utf-8" />
 </head>
 <style type="text/css">
@@ -37,13 +37,19 @@
 		foreach($result as $row){
 			if ($row["status"] != 'admin'){
 				echo "<tr>";
-					echo "<td>" . $row["username"] . "</td>";
-					echo "<td>" . $row["status"] . "</td>";
-					echo "<td>" . $row["surname"] . "</td>";
-					echo "<td>" . $row["firstname"] . "</td>";
-					echo "<td>" . $row["patronymic"] . "</td>";
-					echo "<td>" . $row["dob"] . "</td>";
-					echo "<td><a href='UpdateInfo.php?id=" . $row["id"] . "'>Изменить</a></td>";
+				echo "<td>" . $row["username"] . "</td>";
+				echo "<td>" . $row["status"] . "</td>";
+				echo "<td>" . $row["surname"] . "</td>";
+				echo "<td>" . $row["firstname"] . "</td>";
+				echo "<td>" . $row["patronymic"] . "</td>";
+				echo "<td>" . $row["dob"] . "</td>";
+				echo "<td><a href='UpdateInfo.php?id=" . $row["id"] . "'>Изменить</a></td>";
+				echo "<td>
+						<form action='DeleteUser.php' method='post'>
+							<input type='hidden' name='id' value='" . $row["id"] . "' />
+							<input type='submit' value='Удалить'>
+						   </form>
+					 </td>";
 				echo "</tr>";
 			}
 			
