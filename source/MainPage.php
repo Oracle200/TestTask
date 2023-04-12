@@ -19,6 +19,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<p>
 		Здравствуйте <b><?php echo $_SESSION["username"]; ?></b>
 	</p>
+	<p>
+		<a href="CreateUser.php">Созать пользователя для входа в систему</a>
+	</p>
 	<a href="logout.php">Выйти</a>
 </body>
 </html>

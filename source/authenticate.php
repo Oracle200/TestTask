@@ -25,15 +25,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$_SESSION["username"] = $_POST['username'];
 				header("location: MainPage.php");
 			} else {
-				echo 'Неверный пароль';
+				echo '<h3 style="background-color: red">Неверный пароль</h3>';
 			}
 		} else {
-			echo 'Такого пользователя не сущесвует';
+			echo '<h3 style="background-color: red">Такого пользователя не сущесвует</h3>';
 		}
 		$stmt->close();
 	}
 }
 
-include 'login.php';
+include('../templates/login.php');
 
 ?>
