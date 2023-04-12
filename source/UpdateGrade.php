@@ -25,7 +25,7 @@ require_once "config.php";
 						$Chemistry = $row["Chemistry"];
 						$History = $row["History"];
 					}
-					echo "<h3>Обновление пользователя</h3>
+					echo "<h3>Обновления оценок</h3>
 					<form method='post'>
 						<input type='hidden' name='id' value='$userid' />
 						<p>Алгебра: <input type='number' name='algebra' value='$algebra' /></p>
@@ -62,13 +62,12 @@ require_once "config.php";
 
 			if($result = mysqli_query($DataBase, $sql)){
 				header("Location: AdminGrade.php");
-			} else{
-				echo "Ошибка: " . mysqli_error($conn);
 			}
 		}
 		else{
 			echo "Некорректные данные";
 		}
 	?>
+	<a href="../source/AdminGrade.php">Вернуться на главную</a>
 </body>
 </html>
