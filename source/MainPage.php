@@ -24,6 +24,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			?>
 			<div>
 				<a href="CreateUser.php">Созать пользователя для входа в систему</a>
+			</div>
+			<div>
+				<a href="AdminGrade.php">Изменить оценки</a>  
+			</div>	
+			<div>
+				<a href="AdminInfo.php">Посмотреть информацию об учащихся</a>  
 			</div>	
 			<?	
 		}
