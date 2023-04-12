@@ -19,9 +19,24 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<p>
 		Здравствуйте <b><?php echo $_SESSION["username"]; ?></b>
 	</p>
-	<p>
-		<a href="CreateUser.php">Созать пользователя для входа в систему</a>
-	</p>
+	<?php
+		if ($_SESSION['status'] === 'admin') {
+			?>
+			<div>
+				<a href="CreateUser.php">Созать пользователя для входа в систему</a>
+			</div>	
+			<?	
+		}
+	?>
+	<?php
+			if ($_SESSION['status'] === 'student') {
+			?>
+			<div>
+				<a href="StudentGrade.php">Посмотреть оценки</a>
+			</div>	
+			<?	
+		}
+	?>
 	<a href="logout.php">Выйти</a>
 </body>
 </html>
